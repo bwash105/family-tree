@@ -19,11 +19,13 @@ export type Person = {
   updated_at: string
 }
 
+export type RelationshipType = 'parent_child' | 'spouse'
+
 export type Relationship = {
   id: string
   person_a_id: string
   person_b_id: string
-  relationship_type: 'parent_child' | 'spouse'
+  relationship_type: RelationshipType
   added_by: string | null
   created_at: string
 }
