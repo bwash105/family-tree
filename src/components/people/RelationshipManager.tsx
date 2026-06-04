@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { addRelationship, removeRelationship } from '@/lib/actions/relationships'
 import { PeopleSearch } from '@/components/search/PeopleSearch'
-import type { Person, Relationship, RelationshipType } from '@/lib/types'
+import type { Person, Relationship } from '@/lib/types'
 
 type Props = {
   personId: string

@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { signOut } from '@/lib/actions/auth'
+import { BottomNav } from '@/components/layout/BottomNav'
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient()
@@ -42,29 +43,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <main className="flex-1 pb-20 md:pb-0">{children}</main>
 
       {/* Mobile bottom nav */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex md:hidden z-40">
-        <Link
-          href="/tree"
-          className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 text-gray-600 active:bg-gray-50 touch-manipulation"
-        >
-          <span className="text-xl">🌳</span>
-          <span className="text-xs font-medium">Tree</span>
-        </Link>
-        <Link
-          href="/people"
-          className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 text-gray-600 active:bg-gray-50 touch-manipulation"
-        >
-          <span className="text-xl">👥</span>
-          <span className="text-xs font-medium">People</span>
-        </Link>
-        <Link
-          href="/profile"
-          className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 text-gray-600 active:bg-gray-50 touch-manipulation"
-        >
-          <span className="text-xl">👤</span>
-          <span className="text-xs font-medium">Profile</span>
-        </Link>
-      </nav>
+      <BottomNav />
     </div>
   )
 }
