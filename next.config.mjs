@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    loader: 'custom',
+    loaderFile: './src/supabase-image-loader.ts',
+  },
+}
 
-export default nextConfig;
+export default nextConfig
