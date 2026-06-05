@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Caveat, Quicksand } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat', display: 'swap' })
+const quicksand = Quicksand({ subsets: ['latin'], variable: '--font-quicksand', display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Family Tree',
   description: 'Our shared family history',
-  manifest: '/manifest.json',
 }
 
 export const viewport: Viewport = {
@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${quicksand.variable} ${caveat.variable} font-body antialiased`}>{children}</body>
     </html>
   )
 }

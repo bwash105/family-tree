@@ -2,31 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --cream: #FFFBF5;
+    --brown: #92400E;
+    --amber: #D97706;
+    --text: #1C1917;
+    --muted: #78716C;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: var(--cream);
+    color: var(--text);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-caveat), cursive;
+  }
+
+  /* Smooth tap feedback on mobile */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+  .font-body { font-family: var(--font-quicksand), sans-serif; }
+  .font-display { font-family: var(--font-caveat), cursive; }
+  .safe-area-inset-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .text-balance { text-wrap: balance; }
 
-/* Safe area for iOS notch/home-indicator */
-.safe-area-inset-bottom {
-  padding-bottom: env(safe-area-inset-bottom);
+  /* Prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

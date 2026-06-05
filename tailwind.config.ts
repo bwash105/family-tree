@@ -8,9 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ['var(--font-quicksand)', 'sans-serif'],
+        display: ['var(--font-caveat)', 'cursive'],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        cream: '#FFFBF5',
+        brown: {
+          DEFAULT: '#92400E',
+          light: '#B45309',
+          dark: '#78350F',
+        },
       },
     },
   },
