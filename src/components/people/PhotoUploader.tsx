@@ -1,7 +1,8 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { getSignedUploadUrl, getPublicUrl } from '@/lib/actions/storage'
+import { getSignedUploadUrl } from '@/lib/actions/storage'
+import { getPublicUrl } from '@/lib/utils/storage'
 import Image from 'next/image'
 
 type Props = {
